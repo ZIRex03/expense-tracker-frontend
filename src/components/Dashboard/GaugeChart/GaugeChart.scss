@@ -1,0 +1,75 @@
+@import '@styles/mixins.scss';
+
+.dashboard__top-budget {
+
+    color: var(--text-color);
+    background-color: var(--input-background);
+    padding: 10px 20px;
+    border-radius: 12px;
+    position: relative;
+
+    &-title{
+        @include fluid-text(26, 36);
+        font-weight: 600;
+    }
+
+    &-date{
+        margin-top: 10px;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    &-chart{
+        margin-top: 40px;
+        max-width: 420px;
+        position: relative;
+    }
+
+    &-count{
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        margin-top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 32px;
+        font-weight: 600;
+
+        span{
+            font-size: 22px;
+            font-weight: 400;
+        }
+    }
+
+}
+
+@media (max-width: 1700px){
+
+    .dashboard__top-budget{
+        width: 50%;
+
+        &-chart{
+            max-width: none;
+        }
+    }
+}
+
+@media (max-width: 1200px){
+
+    .dashboard__top-budget{
+        width: 40%;
+
+    }
+}
+
+@media (max-width: 990px){
+
+    .dashboard__top-budget{
+        width: 100%;
+        height: auto;
+
+        &-count{
+            margin-top: -10px;
+        }
+    }
+}

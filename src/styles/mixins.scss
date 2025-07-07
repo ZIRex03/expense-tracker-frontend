@@ -1,0 +1,7 @@
+@mixin clamp-padding($min, $max){
+    padding-inline: clamp(#{$min}px, #{$max/1920*100}vw, #{$max}px);
+}
+
+@mixin fluid-text($min, $max){
+    font-size: clamp(#{$min}px, #{$max/1440*100}vw, #{$max}px);
+}

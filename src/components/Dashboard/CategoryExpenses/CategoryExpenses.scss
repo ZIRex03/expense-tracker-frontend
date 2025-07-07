@@ -1,0 +1,112 @@
+@import '@styles/mixins.scss';
+
+.dashboard__bottom-category {
+
+    &-title{
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--text-color);
+    }
+
+    &-date{
+        margin-top: 10px;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--text-color);
+    }
+
+    &-container{
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+
+    .container__item {
+        background-color: var(--input-background);
+        border-radius: 12px;
+        color: var(--text-color);
+        padding: 13px 20px 30px 20px;
+
+        &-icon{
+            width: 88px;
+            min-width: 70px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--background-color);
+
+            img{
+                width: 100%;
+                aspect-ratio: 1;
+                object-fit: cover;
+            }
+        }
+
+        &-title{
+            margin-top: 12px;
+            @include fluid-text(20, 26);
+            font-weight: 300;
+        }
+
+        &-expense{
+
+            .expense-count{
+                margin-top: 20px;
+                @include fluid-text(17, 22);
+                font-weight: 500;
+                text-wrap: nowrap;
+
+                span{
+                    @include fluid-text(16, 20);
+                    font-weight: 400;
+                }
+            }
+
+            .expense-progress{
+                width: 100%;
+
+                &::-webkit-meter-bar{
+                    border-radius: 10px;
+                    background: #90bfec7c;
+                }
+
+                &::-webkit-meter-optimum-value{
+                    background: var(--blue);
+                }
+
+                &::-webkit-meter-suboptimum-value{
+                    background: var(--blue);
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width:1200px){
+    .dashboard__bottom-category{
+
+        &-container{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media(max-width:750px){
+    .dashboard__bottom-category{
+
+        &-container{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media(max-width:500px){
+    .dashboard__bottom-category{
+
+        &-container{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

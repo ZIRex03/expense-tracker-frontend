@@ -1,0 +1,73 @@
+@import '@styles/mixins.scss';
+
+.dashboard__bottom-expenses-transactions {
+
+    &-title{
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--text-color);
+    }
+
+    .container__transactions{
+        display: flex;
+        flex-direction: column;
+        color: var(--text-color);
+        margin-top: 15px;
+         
+
+        &-item{
+            padding: 10px 14px;
+            border-radius: 12px;
+            background-color: var(--input-background);
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-between;
+            align-items: center;
+
+            &:nth-child(2){
+                background-color: var(--background-color);
+            }
+
+            .item-date{
+                font-style: italic;
+                @include fluid-text(12, 16);
+                font-weight: 300;
+            }
+
+            .item-transaction-name {
+                @include fluid-text(12, 16);
+                font-weight: 500;
+            }
+
+            .item-transaction-category {
+                @include fluid-text(12, 16);
+                font-weight: 300;
+            }
+
+            .item-price {
+                @include fluid-text(16, 20);
+                text-align: end;
+            }
+        }
+
+
+    }
+}
+
+
+@media(max-width:1700px){
+
+    .dashboard__bottom-expenses-transactions{
+
+        width: 45%;
+    }
+}
+
+@media(max-width:800px){
+
+    .dashboard__bottom-expenses-transactions{
+
+        width: 100%;
+    }
+}

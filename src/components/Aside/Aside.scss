@@ -1,0 +1,160 @@
+@import "@styles/mixins.scss";
+
+
+#aside{
+    min-width: 320px;
+    max-width: 320px;
+    padding: 60px 40px;
+    background-color: var(--card-background);
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-200%);
+    transition: .3s ease;
+    z-index: 999;
+
+    &.open{
+        transform: translateX(0%);
+    }
+
+    .close-icon{
+        color: var(--text-color);
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 32px;
+        cursor: pointer;
+        transition: .3s ease;
+
+        &:hover{
+            opacity: .4;
+        }
+    }
+
+    .aside{
+        &__pages{
+            display: flex;
+            flex-direction: column;
+            row-gap: 34px;
+
+            &-item{
+                display: flex;
+                column-gap: 24px;
+                color: var(--text-color);
+                @include fluid-text(16, 24);
+                align-items: center;
+                padding: 23px 19px;
+
+                transition: .6s all ease-in-out;
+
+                &-icon{
+                    width: 32px;
+                    min-width: 32px;
+                }
+
+                &.active{
+                    border-radius: 24px;
+                    color: var(--active-text-color);
+                    background-color: var(--blue);
+                    
+                }
+            }
+        }
+
+        &__settings{
+
+            &-darkmode{
+
+                display: flex;
+                align-items: center;
+
+                #check{
+                    display: none;
+                }
+
+                p{
+                    font-size: 18px;
+                    color: var(--text-color);
+                }
+
+                display: flex;
+                justify-content: space-between;
+                column-gap: 30px;
+
+                .switch{
+                    width: 80px;
+                    height: 50px;
+                    border-radius: 25px;
+                    background-color: #d8d3d3;
+                    position: relative;
+                    transition: .3s ease;
+
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        background-color: yellow;
+                        width: 40px;
+                        height: 40px;
+                        margin: 5px;
+                        border-radius: 50%;
+                        transition: .3s ease;
+                    }
+                }
+
+                #check:checked + .switch{
+                    background-color: var(--input-background);
+                }
+
+                #check:checked + .switch::before{
+                    transform: translateX(30px);
+                    background-color: #a09c9c;
+                }
+            }
+        }
+    }
+    
+}
+
+
+@media (max-width: 600px){
+
+    #aside{
+        padding: 50px 20px;
+
+        .aside{
+
+            &__pages{
+
+                row-gap: 25px;
+
+                &-item{
+                    font-size: 18px;
+                    padding: 15px 10px;
+
+                    &-icon{
+                        width: 24px;
+                        min-width: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 410px){
+
+    #aside{
+
+        min-width: none;
+        max-width: none;
+        width: 100%;
+
+        
+        .aside__logo{
+            margin-top: 30px;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+
+.headerbord{
+
+    top: 0;
+    position: fixed;
+    background-color: var(--background-color);
+    width: 100%;
+    z-index: 990;
+    padding-top: 20px;
+    display: flex;
+    column-gap: 40px;
+
+    .burger-icon{
+        width: 32px;
+        color: var(--text-color);
+        float: left;
+        cursor: pointer;
+
+        transition: .3s ease;
+
+        &:hover{
+            opacity: .4;
+        }
+    }
+
+    .notification-box {
+
+        display: flex;
+        position: relative;
+
+        .notification-icon{
+            width: 32px;
+            color: var(--text-color);
+            float: left;
+            cursor: pointer;
+    
+            transition: .3s ease;
+    
+            &:hover{
+                opacity: .4;
+            }
+        }
+
+        span{
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background-color: var(--blue);
+            position: absolute;
+            top: 5px;
+            right: 2px;
+        }
+
+        #notifications {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: var(--input-background);
+            width: 600px;
+            height: 500px;
+            display: none;
+            z-index: 999;
+            border-radius: 8px;
+            padding: 10px;
+            color: var(--text-color);
+
+            &.open{
+                display: flex;
+            }
+
+            .budget-over{
+
+                .title {
+                  font-size: 32px;
+                  font-weight: 500;
+                  margin-top: 20px;
+                }
+
+                .subtitle{
+                    font-size: 20px;
+                    margin-top: 20px;
+                    margin-left: 45px;
+                }
+
+                .subtitle-category{
+                    font-size: 20px;
+                    margin-top: 20px;
+                    margin-left: 45px;
+                    color: var(--text-color);
+                }
+
+                .subtitle-spent{
+                    font-size: 18px;
+                    margin-top: 20px;
+                    margin-left: 65px;
+                    color: red;
+                    
+                }
+
+                .link{
+                    margin-top: 10px;
+                    margin-left: 65px;
+                    color: var(--blue);
+                }
+            }
+
+        }
+
+    }
+
+    
+
+
+}

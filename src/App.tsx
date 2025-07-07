@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import UserForm from '@pages/UserForm/UserForm'
+import { getLimits } from 'features/limits/limitsSlice'
+import { getTransactions } from 'features/transactions/transactionsSlice'
+import { useAppDispatch, useAppSelector } from 'hooks/reduxHooks'
+import React from 'react'
+import AppRoutes from 'routes/AppRoutes'
 
-function App() {
+type Props = {}
+
+const App = (props: Props) => {
+
+  const {currentUser}:any = useAppSelector(({users}) => users)
+  const dispatch = useAppDispatch();
+
+  if(currentUser){
+    dispatch(getTransactions({id: currentUser.id}));
+    dispatch(getLimits({id: currentUser.id}));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UserForm/>
+      <AppRoutes/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

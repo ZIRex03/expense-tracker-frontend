@@ -1,0 +1,52 @@
+@import "./reset.scss";
+@import "./mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    --background-color: #D9D9D9;
+    --text-color: #000;
+    --active-text-color: #fff;
+    --card-background: #fff;
+    --blue: #0085FF;
+    --green: #009900;
+    --input-background: #fff;
+
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: var(--background-color);
+
+    transition: .3s all ease;
+}
+
+body.dark{
+    --background-color: #121111;
+    --text-color: #fff;
+    --active-text-color: #fff;
+    --card-background: #000;
+    --blue: #0085FF;
+    --green: #009900;
+    --input-background: #1F1E1E;
+
+    background-color: var(--background-color);
+}
+
+.container{
+    @include clamp-padding(15, 98);
+    
+    .empty-transactions{
+        font-size: 36px;
+        color: var(--text-color);
+        font-weight: 600;
+    }
+}
+
+#aside-layout{
+    display: flex;
+    flex-direction: column;
+}
+
+.p-datepicker{
+    z-index: 999;
+    background-color: var(--input-background);
+    color: var(--text-color);
+}
