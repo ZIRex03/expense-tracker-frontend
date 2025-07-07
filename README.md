@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# Финансовый трекер - SubTrackr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## О проекте
 
-## Available Scripts
+Этот репозиторий содержит фронтенд часть приложения для учета личных финансов, разработанного на React. Проект связан с [бэкенд репозиторием](https://github.com/ZIRex03/expense-tracker-backend), где реализована серверная часть и API.
 
-In the project directory, you can run:
+**Важно**:
+1. Приложение использует локальную базу данных для разработки, поэтому приложение и его функции недоступны вдля просмотра. Функционал описан ниже в пункте скриншоты
+2. Проект находится в разработке, финальная версия приложения может отличаться.
 
-### `npm start`
+## Основные функции
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Дашборд**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    * Визуализация бюджета и расходов (графики)
+    * Анализ расходов по категориям (с 1 числа текущего месяца)
+    * Предстоящие регулярные платежи
+    * История последних транзакций
 
-### `npm test`
+2. **Управление расходами**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    * Таблица всех расходов
+    * Добавление новых расходов
+    * Редактирование существующих записей
 
-### `npm run build`
+3. **Управление бюджетом**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    * Обзор бюджета (доходы/расходы/остаток)
+    * Настройка лимитов по категориям
+    * Контроль перерасходов
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Уведомления**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    * Предупреждения о приближении к лимиту
+    * Оповещения о регулярных платежах
 
-### `npm run eject`
+5. **Профиль пользователя**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    * Форма регистрации/авторизации
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Технологии
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* **Frontend:** React, Redux Toolkit, React Router, Chart.js, primereact
+* **Стили:** SCSS
+* **API:** Axios
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Скриншоты интерфейса
 
-## Learn More
+1. **Дашборд**
+![Дашборд с графиками](./screenshots/dashboard.png)
+![Расходы и подписки](./screenshots/dashboard-transactions.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Управление расходами**
+![Таблица расходов](./screenshots/transactions.png)
+![Добавление расходов](./screenshots/transactions-add.png)
+![Редактирование расходов](./screenshots/transactions-edit.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Управление бюджетом**
+![Общий бюджет](./screenshots/budget.png)
+![Лимиты](./screenshots/limits.png)
+![Настройка лимитов](./screenshots/limits-settings.png)
+
+4. **Уведомления**
+![Уведомления](./screenshots/notifications.png)
+
+5. **Авторизация**
+![Страница авторизации](./screenshots/login.png)
